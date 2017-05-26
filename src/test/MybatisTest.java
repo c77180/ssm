@@ -18,19 +18,19 @@ public class MybatisTest {
 	@Autowired
 	CategoryMapper categoryMapper;
 	
-//	@Test
-//	public void testAdd(){
-//		for(int i=0;i<100;i++)
-//		{
-//			Category c=new Category();
-//			c.setName("category"+i);
-//			categoryMapper.add(c);
-//		}
-//	}
+	@Test
+	public void testAdd(){
+		for(int i=0;i<100;i++)
+		{
+			Category c=new Category();
+			c.setName("category"+i);
+			categoryMapper.add(c);
+		}
+	}
 	
 //	@Test
 //	public void testdelete(){
-//		for(int i=100;i<305;i++)
+//		for(int i=1;i<99;i++)
 //			categoryMapper.delete(i);
 //	}
 	
@@ -50,6 +50,8 @@ public class MybatisTest {
 			System.out.println(c.getName());
 		}
 	}
+	
+	
 	
 	
 }

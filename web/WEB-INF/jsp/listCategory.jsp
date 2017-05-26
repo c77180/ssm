@@ -8,16 +8,19 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <div class="table table-hover" ;style="width:500px;magrin: 0px auto;text-align: center;">
-<table align='center' border='1' cellspacing='0'>
-	<tr align='center' style='color:red'>
+<table class="table table-striped table-bordered table-hover  table-condensed" align='center' border='1' cellspacing='0'>
+	<tr align='center' style='color:red' >
 		<td>id</td>
 		<td>name</td>
+		<td>edit</td>
+		<td>delete</td>
 	</tr>
-	
 	<c:forEach items="${cs}" var="c" varStatus="st">
-		<tr>
+		<tr   align="center">
 			<td>${c.id}</td>
 			<td>${c.name}</td>
+			<td><a href="editCategory?id=${c.id}">edit</a></td>
+			<td><a href="deleteCategory?id=${c.id}">delete</a></td>
 		</tr>
 	</c:forEach>
 </table>
@@ -28,4 +31,11 @@
 	<a href="?start=${page.last}"><button type="button" class="btn btn-warn">末页</button></a>
 </div>
 
+<div style="text-align:center;margin-top:40px">
+	<form method="post" action="addCategory">
+		分类名称:<input name="name" value="" type="text"><br><br>
+		<input type="submit" value="增加分类" class="btn btn-primary" />	
+	</form>
+	
+</div>
 </div>

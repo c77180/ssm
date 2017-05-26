@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import mapper.CategoryMapper;
 import pojo.Category;
 import service.CategoryService;
 import util.Page;
@@ -32,5 +33,29 @@ public class CategoryController {
 
 		return mav;
 	}
-
+	@RequestMapping("addCategory")
+	public ModelAndView add(Category category){
+		categoryService.add(category);
+		ModelAndView mav= new ModelAndView("redirect:/listCategory");
+		return mav;
+	}
+	@RequestMapping("deleteCategory")
+	public ModelAndView delete(int id){
+		categoryService.delete(id);
+		ModelAndView mav= new ModelAndView("redirect:/listCategory");
+		return mav;
+	}
+	@RequestMapping("editCategory")
+	public ModelAndView editCategory(Category category){
+		Category c=categoryService.get(category.getId());
+		ModelAndView mav= new ModelAndView("editCategory");
+		mav.addObject("c",c);
+		return mav;
+	}
+	@RequestMapping("updateCategory")
+	public ModelAndView updateCategory(Category category){
+		categoryService.update(category);
+		ModelAndView mav= new ModelAndView("redirect:/listCategory");
+		return mav;
+	}
 }
