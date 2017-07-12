@@ -1,9 +1,4 @@
-/Controller/
-/applicationContext.xml
-/log4j.properties
-/mapper/
 /pojo/
+/mapper/
 /service/
-/springMVC.xml
-/test/
-/util/
+/controller/
