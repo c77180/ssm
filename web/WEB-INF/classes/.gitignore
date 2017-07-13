@@ -2,3 +2,6 @@
 /mapper/
 /service/
 /controller/
+/applicationContext.xml
+/springMVC.xml
+/test/
